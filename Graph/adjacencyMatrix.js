@@ -8,8 +8,8 @@ class AdjacencyMatrixGraph{
     }
 
     addEdge(v1,v2){
-        const i = this.matrix.indexOf(v1)
-        const j = this.matrix.indexOf(v2)
+        const i = this.vertices.indexOf(v1)
+        const j = this.vertices.indexOf(v2)
 
         if(i !== -1 && j !== -1){
             this.matrix[i][j] = 1;
