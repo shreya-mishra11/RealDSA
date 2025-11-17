@@ -69,3 +69,72 @@ Matrix will waste huge memory space
 - Adjacency List → Space-efficient, little slower lookup
 
 
+### Undirecred graph : cycle detection 
+
+👉 agar hum kisi already visited node pe ja rahe hain jo parent nahi hai,
+to ye cycle hai.
+
+![alt text](image-2.png)
+
+for example: 
+1 -> 2
+2 -> 1,3
+3 -> 2
+
+4-> 5,6
+5-> 6,4, 7
+7 -> 5,8
+8 -> 6, 7(already visited node and this is not a parent) , 9 
+mtlb cylic
+
+### Most common approach (DFS)
+- har node k lie DFS lagao
+- Maintain visited set and parent
+- agar koi neighbour visited hai aur parent nahi hai -> cycle found
+
+
+
+### Directed Graph : cycle detection
+
+![alt text](image-3.png)
+4,5,6 cycle present
+
+### how do we do this by code ?
+
+- We use DFS traversal with two sets (or arrays):
+
+- visited → ye batata hai ki node kabhi visit hua hai ya nahi.
+
+- recStack (recursion stack) → ye batata hai ki current DFS path me kaunsa node active hai.
+
+- Agar DFS karte waqt kisi neighbor ko visit karte hue wo neighbor recStack me already present hai,
+
+- matlab hum same path pe wapas ghoom gaye → cycle detected 🔁
+
+
+### Algorithm Steps:
+
+- Har node ke liye DFS call lagao agar wo visited nahi hai.
+
+- Jab ek node DFS me enter ho:
+
+- visited[node] = true
+
+- recStack[node] = true
+
+- Uske neighbors traverse karo:
+
+- agar neighbor visited nahi → DFS call
+
+- agar neighbor recStack me already true → ✅ cycle found
+
+- Jab node se backtrack karo → recStack[node] = false
+
+### Topological Sort Using DFS
+-> directed acyclic graph
+
+-> topological sort is linear order of vertices such that for every edge (u-v) u always appears before v in that ordering
+
+### Topological Sort Using Kahns Algorithm  
+
+ 
