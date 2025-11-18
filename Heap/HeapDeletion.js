@@ -134,10 +134,6 @@ class MinHeap{
             index = minimum
         }
     }
-
-
-
-
 }
 
 const deletionMinHeap = new MinHeap();
