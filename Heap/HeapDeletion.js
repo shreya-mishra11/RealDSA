@@ -122,10 +122,10 @@ class MinHeap{
             let right = 2*index+2;
             let minimum = index;
 
-            if(left < minimum && this.heap[left] < this.heap[minimum] ){
+            if(left < length && this.heap[left] < this.heap[minimum] ){
                 minimum = left;
             }
-            if (right < minimum && this.heap[right] < this.heap[minimum]){
+            if (right < length && this.heap[right] < this.heap[minimum]){
                 minimum = right;
             }
             if(minimum === index) break;
